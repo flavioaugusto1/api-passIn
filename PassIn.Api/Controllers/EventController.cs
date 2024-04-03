@@ -37,6 +37,7 @@ public class EventController : ControllerBase
     [ProducesResponseType(typeof(ResponseEventJson), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status409Conflict)]
     public IActionResult Register(Guid eventId, [FromBody] RequestRegisterEventJson request)
     {
         var useCase = new RegisterAttendeeOnEventUseCase();
