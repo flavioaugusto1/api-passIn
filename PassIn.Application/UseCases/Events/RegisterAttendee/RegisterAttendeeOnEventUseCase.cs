@@ -66,7 +66,7 @@ public class RegisterAttendeeOnEventUseCase
 
         var attendeeForEvent = _dbContext.Attendees.Count(attendee => attendee.Event_id == eventId);
 
-        if(attendeeForEvent > eventEntity.Maximum_Attendees)
+        if(attendeeForEvent == eventEntity.Maximum_Attendees)
         {
             throw new ConflictException("There is no room for this event.");
 
